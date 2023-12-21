@@ -18,21 +18,61 @@ def input_gather():
     return user_play
 
 
-def computer_play():
+def computer_turn():
     options = ("rock", "paper", "scissors")
 
-    opponent_play = random.choice(options)
+    computer_play = random.choice(options)
 
-    return opponent_play
+    return computer_play
 
 
 def main():
-    input_gather()
+    user_play = input_gather()
+    computer_play = computer_turn()
+    while True:
+        if user_play == "rock":
+            if computer_play == "paper":
+                print(computer_play)
+                print("i win")
+                break
+            elif computer_play == "scissors":
+                print(computer_play)
+                print("i lose :(")
+                break
+            else:
+                print(computer_play)
+                print("draw")
+                break
 
-    opponent_play = computer_play()
+        if user_play == "paper":
+            if computer_play == "scissors":
+                print(computer_play)
+                print("i win")
+                break
+            elif computer_play == "rock":
+                print(computer_play)
+                print("i lose :(")
+                break
+            else:
+                print(computer_play)
+                print("draw")
+                break
 
-    print(opponent_play)
+        if user_play == "scissors":
+            if computer_play == "rock":
+                print(computer_play)
+                print("i win")
+                break
+            elif computer_play == "paper":
+                print(computer_play)
+                print("i lose :(")
+                break
+            else:
+                print(computer_play)
+                print("draw")
+                break
 
-
-while True:
     main()
+
+
+main()
